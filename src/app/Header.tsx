@@ -3,12 +3,12 @@ import React from 'react'
 const Header = () => {
     return (
         <header>
-            <nav>
-                <ul>
-                    <li>Home</li>
-                    <li>記事を書く</li>
-                </ul>
-            </nav>
+            <div>
+                <h1>Next Blog App</h1>
+            </div>
+            <div>
+                <button>記事を書く</button>
+            </div>
         </header>
     )
 }
