@@ -1,13 +1,14 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Header = () => {
     return (
         <header>
             <div>
-                <h1>Next Blog App</h1>
+                <h1><Link href="/">Next Blog App</Link></h1>
             </div>
             <div>
-                <button>記事を書く</button>
+                <button><Link href="articles/new">記事を書く</Link></button>
             </div>
         </header>
     )

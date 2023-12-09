@@ -3,6 +3,8 @@
   margin: 0;
 }
 
+
+
 header {
   height: 60px;
   background: rgb(65, 143, 233);
@@ -24,4 +26,14 @@ footer {
   color: white;
   line-height: 60px;
   text-align: center;
+}
+
+form {
+  width: 70%;
+  height: 500px;
+  margin: 0 auto;
+}
+
+input {
+  width: 100%;
 }
