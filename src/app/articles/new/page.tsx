@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react'
 import { useRouter } from "next/navigation";
 
@@ -22,21 +24,27 @@ const CreateArticle = () => {
             body: JSON.stringify({ id, title, content }),
         });
 
-    }
+        router.push("/");
+        router.refresh();
+    };
 
     return (
         <main>
             <form onSubmit={handleSubmit}>
                 <label>タイトル</label>
+                <br />
                 <input type="text" placeholder='タイトル' />
                 <label>URL</label>
+                <br />
                 <input type="text" placeholder='URL' />
                 <label>本文</label>
+                <br />
                 <textarea placeholder='本文' />
+                <br />
                 <button type="submit">投稿</button>
             </form>
         </main >
     )
 }
 
-export default page
+export default CreateArticle;
