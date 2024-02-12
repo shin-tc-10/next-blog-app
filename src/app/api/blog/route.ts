@@ -1,16 +1,13 @@
 import { NextResponse } from "next/server";
-import { supabase } from "../../util/supabaseClient";
 import { notFound } from "next/navigation";
+import { NextApiResponse } from "next";
+import { supabase } from "@/util/supabaseClient";
 
-export async function GET() {
-    const { data, error } = await supabase.from("posts").select('*');
-
-    console.log(data);
-
+export async function GET(request: Request, response: NextApiResponse) {
+    const { data, error } = await supabase.from("posts").select("*");
 
     if (!error) {
-        return notFound();
     }
 
-    return NextResponse.json({ data });
+    return NextResponse.json(data);
 }
