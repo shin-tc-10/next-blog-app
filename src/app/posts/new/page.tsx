@@ -10,13 +10,13 @@ const CreateArticle = () => {
     const [content, setContent] = useState("");
     const [loading, setLoading] = useState(false);
 
-    const API_URL = process.env.NEXT_PUBLIC_API_URL;
+    const NEXT_API_URL = process.env.NEXT_PUBLIC_API_URL;
 
     const handleSubmit = async (data: React.FormEvent<HTMLFormElement>) => {
         data.preventDefault();
         setLoading(true);
 
-        const newArticle = await fetch(`${API_URL}/api`, {
+        await fetch(`${NEXT_API_URL}/api/blog/${id}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -29,21 +29,21 @@ const CreateArticle = () => {
     };
 
     return (
-        <main>
+        <div>
             <form onSubmit={handleSubmit}>
                 <label>タイトル</label>
                 <br />
-                <input type="text" placeholder='タイトル' />
+                <input type="text" placeholder='タイトル' value={title} onChange={e => setTitle(e.target.value)} />
                 <label>URL</label>
                 <br />
-                <input type="text" placeholder='URL' />
+                <input type="text" placeholder='URL' value={id} onChange={e => setId(e.target.value)} />
                 <label>本文</label>
                 <br />
-                <textarea placeholder='本文' />
+                <textarea placeholder='本文' value={content} onChange={e => setContent(e.target.value)} />
                 <br />
                 <button type="submit">投稿</button>
             </form>
-        </main >
+        </div >
     )
 }
 

@@ -2,10 +2,10 @@ import PostList from "./components/PostList";
 
 export default async function Home() {
 
-  const NEXT_LOCAL_URL = process.env.NEXT_LOCAL_URL;
+  const NEXT_API_URL = process.env.NEXT_PUBLIC_API_URL;
 
   // ブログ記事一覧をSSRで取得する
-  const response = await fetch(`${NEXT_LOCAL_URL}/api/blog`, { cache: 'no-store' });
+  const response = await fetch(`${NEXT_API_URL}/api/blog`, { cache: 'no-store' });
   const posts = await response.json();
 
   return (
