@@ -20,10 +20,10 @@ export async function POST(req: Request, res: NextApiResponse) {
     const { data, error } = await supabase.from("posts").insert({ id, title, content });
 
     if (error) {
-        return NextResponse.json(error);
+        // return NextResponse.json(error);
     }
 
-    return NextResponse.json(data);
+    // return NextResponse.json(data);
 
 }
 
@@ -32,9 +32,9 @@ export async function DELETE(req: Request, { params }: { params: { id: string } 
     const { data, error } = await supabase.from("posts").delete().eq("id", params.id).single();
 
     if (error) {
-        return NextResponse.json(error);
+        // return NextResponse.json(error);
     }
 
-    return NextResponse.json(data);
+    // return NextResponse.json(data);
 
 }

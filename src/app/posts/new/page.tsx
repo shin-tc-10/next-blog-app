@@ -24,8 +24,8 @@ const CreateArticle = () => {
             body: JSON.stringify({ id, title, content }),
         });
 
-        router.push("/");
-        router.refresh();
+        // router.push("/");
+        // router.refresh();
     };
 
     return (

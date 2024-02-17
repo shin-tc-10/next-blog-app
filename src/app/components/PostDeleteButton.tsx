@@ -19,7 +19,7 @@ const PostDeleteButton = ({ id }: PostDeleteButtonProps) => {
             body: JSON.stringify({ id }),
         });
 
-        router.push("/");
+        // router.push("/");
         router.refresh();
 
     }
