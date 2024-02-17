@@ -23,6 +23,6 @@ export async function POST(req: Request, res: NextApiResponse) {
         return NextResponse.json(error);
     }
 
-    return NextResponse.json(data), { status: 201 };
+    return NextResponse.json(data);
 
 }
