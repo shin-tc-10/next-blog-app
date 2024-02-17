@@ -26,3 +26,15 @@ export async function POST(req: Request, res: NextApiResponse) {
     return NextResponse.json(data);
 
 }
+
+export async function DELETE(req: Request, { params }: { params: { id: string } }, res: NextApiResponse) {
+
+    const { data, error } = await supabase.from("posts").delete().eq("id", params.id).single();
+
+    if (error) {
+        return NextResponse.json(error);
+    }
+
+    return NextResponse.json(data);
+
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
-
+import PostDeleteButton from '@/app/components/PostDeleteButton';
 
 const page = async ({ params }: { params: { id: string } }) => {
 
@@ -12,9 +12,9 @@ const page = async ({ params }: { params: { id: string } }) => {
     return (
         <div>
             <Image src={`https://source.unsplash.com/collection/1346951/1000×300?sig=${postDetail.id}`} alt="" width={1280} height={300} />
-            <p>{postDetail.title}</p>
-            <p>{postDetail.content}</p>
-            <p>{postDetail.createdAt}</p>
+            <h1>{postDetail.title}</h1>
+            <div>{postDetail.content}</div>
+            <div><PostDeleteButton id={postDetail.id} /></div>
         </div>
     )
 }
