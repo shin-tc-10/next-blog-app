@@ -6,17 +6,23 @@ export default async function Home() {
 
   // ブログ記事一覧をSSRで取得する
   const response = await fetch(`${NEXT_API_URL}/api/blog`, { cache: 'no-store' });
-  const posts = await response.json();
 
-  return (
-    <main>
-      <div>
-        <p>新着記事一覧</p>
-        <PostList posts={posts} />
-      </div>
-      <div>
-        <p>運営者情報</p>
-      </div>
-    </main>
-  )
+  try {
+    const posts = await response.json();
+    console.log("トップページのposts", posts);
+
+    return (
+      <main>
+        <div>
+          <p>新着記事一覧</p>
+          <PostList posts={posts} />
+        </div>
+        <div>
+          <p>運営者情報</p>
+        </div>
+      </main>
+    )
+  } catch (error) {
+    console.error("JSON パースエラー", error);
+  }
 }
