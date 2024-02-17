@@ -7,10 +7,6 @@ export async function GET(req: Request, { params }: { params: { id: string } }, 
 
     const { data } = await supabase.from("posts").select("*").eq("id", params.id).single();
 
-    if (!data) {
-        notFound();
-    }
-
     return NextResponse.json(data);
 
 }
