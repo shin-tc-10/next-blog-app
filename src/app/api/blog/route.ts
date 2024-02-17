@@ -1,15 +1,28 @@
+import { supabase } from "@/utils/supabaseClient";
+import { NextApiRequest, NextApiResponse } from "next";
 import { NextResponse } from "next/server";
-import { notFound } from "next/navigation";
-import { NextApiResponse } from "next";
-import { supabase } from "@/util/supabaseClient";
 
-export async function GET(request: Request, response: NextApiResponse) {
-    const { data } = await supabase.from("posts").select("*");
+export async function GET(req: Request, res: NextApiResponse) {
 
+    const { data, error } = await supabase.from("posts").select("*");
 
-    // ここでdataの内容を確認
-    console.log('Dataの中身はこちら:', data);
-
+    if (error) {
+        return NextResponse.json(error);
+    }
 
     return NextResponse.json(data);
+
+}
+
+export async function POST(req: Request, res: NextApiResponse) {
+    const { id, title, content } = await req.json();
+
+    const { data, error } = await supabase.from("posts").insert([{ id, title, content, createdAt: new Date().toISOString() }]);
+
+    if (error) {
+        return NextResponse.json(error);
+    }
+
+    return NextResponse.json(data), { status: 201 };
+
 }

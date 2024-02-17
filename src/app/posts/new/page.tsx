@@ -16,7 +16,7 @@ const CreateArticle = () => {
         data.preventDefault();
         setLoading(true);
 
-        await fetch(`${NEXT_API_URL}/api/blog/${id}`, {
+        await fetch(`${NEXT_API_URL}/api/blog`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -24,8 +24,8 @@ const CreateArticle = () => {
             body: JSON.stringify({ id, title, content }),
         });
 
-        // router.push("/");
-        // router.refresh();
+        router.push("/");
+        router.refresh();
     };
 
     return (
