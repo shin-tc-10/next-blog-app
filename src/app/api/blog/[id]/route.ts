@@ -4,11 +4,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(req: Request, { params }: { params: { id: string } }, res: NextApiResponse) {
 
-    const { data, error } = await supabase.from("posts").select("*").eq("id", params.id).single();
-
-    if (error) {
-        return res.status(500).json({ error: error.message });
-    }
+    const { data } = await supabase.from("posts").select("*").eq("id", params.id).single();
 
     // ここでdataの内容を確認
     console.log('Dataの中身はこちら:', data);
