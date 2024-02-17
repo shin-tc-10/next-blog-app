@@ -9,21 +9,21 @@ const page = async ({ params }: { params: { id: string } }) => {
 
     console.log("個別ページのresponse" + response);
 
-    try {
-        const postDetail = await response.json();
-        console.log("個別ページのresponse", postDetail);
+    // try {
+    const postDetail = await response.json();
+    console.log("個別ページのresponse", postDetail);
 
-        return (
-            <div>
-                <Image src={`https://source.unsplash.com/collection/1346951/1000×300?sig=${postDetail.id}`} alt="" width={1280} height={300} />
-                <h1>{postDetail.title}</h1>
-                <div>{postDetail.content}</div>
-                <div><PostDeleteButton id={postDetail.id} /></div>
-            </div>
-        )
-    } catch (error) {
-        console.error("JSON パースエラー", error);
-    }
+    return (
+        <div>
+            <Image src={`https://source.unsplash.com/collection/1346951/1000×300?sig=${postDetail.id}`} alt="" width={1280} height={300} />
+            <h1>{postDetail.title}</h1>
+            <div>{postDetail.content}</div>
+            <div><PostDeleteButton id={postDetail.id} /></div>
+        </div>
+    )
+    // } catch (error) {
+    //     console.error("JSON パースエラー", error);
+    // }
 }
 
 export default page
