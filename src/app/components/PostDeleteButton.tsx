@@ -20,7 +20,7 @@ const PostDeleteButton = ({ id }: PostDeleteButtonProps) => {
         });
 
         router.push("/");
-        router.refresh();
+        // router.refresh();
 
     }
 
