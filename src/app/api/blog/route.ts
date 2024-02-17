@@ -10,5 +10,8 @@ export async function GET(request: Request, response: NextApiResponse) {
         return NextResponse.json(error);
     }
 
+    // ここでdataの内容を確認
+    console.log('Dataの中身はこちら:', data);
+
     return NextResponse.json(data);
 }
