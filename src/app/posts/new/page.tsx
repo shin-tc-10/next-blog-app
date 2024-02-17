@@ -25,7 +25,7 @@ const CreateArticle = () => {
         });
 
         router.push("/");
-        // router.refresh();
+        router.refresh();
     };
 
     return (
