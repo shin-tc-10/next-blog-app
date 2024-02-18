@@ -9,7 +9,7 @@ type PostListProps = {
 const PostList = ({ posts }: PostListProps) => {
     return (
         <div className="new-post">
-            {posts.map((post) => (
+            {posts.reverse().map((post) => (
                 <PostDetail key={post.id} post={post} />
             ))}
         </div>

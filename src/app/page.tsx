@@ -11,13 +11,13 @@ export default async function Home() {
   return (
     <div className="contents">
       <div className="new-post-list">
-        {/* <p>新着記事一覧</p> */}
         <PostList posts={posts} />
       </div>
       <div className="side-bar">
         <div className="profile">
-          <p>運営者情報</p>
-          <p>運営者情報です。運営者情報です。運営者情報です。運営者情報です。運営者情報です。運営者情報です。運営者情報です。運営者情報です。</p>
+          <p>当ブログについて</p>
+          <br />
+          <p>当ブログは、Next.jsで作られています。どなたでも自由に投稿可能です。記事のサムネイル画像はランダムに表示されます。</p>
         </div>
       </div>
     </div>
