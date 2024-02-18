@@ -26,7 +26,7 @@ const PostDeleteButton = ({ id }: PostDeleteButtonProps) => {
 
     return (
         <div>
-            <button onClick={handleDelete}>削除</button>
+            <button onClick={handleDelete}>この記事を削除する</button>
         </div>
     )
 }

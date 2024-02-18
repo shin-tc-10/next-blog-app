@@ -14,7 +14,7 @@ const PostDetail = ({ post }: PostDetailProps) => {
         <div className="post-detail" key={post.id}>
             <Link href={`${NEXT_PUBLIC_API_URL}/posts/${post.id}`} ><Image src={`https://source.unsplash.com/collection/1346951/1000×300?sig=${post.id}`} alt="" width={1200} height={675} /></Link>
             <Link href={`${NEXT_PUBLIC_API_URL}/posts/${post.id}`}><p>{post.title}</p></Link>
-            <Link href={`${NEXT_PUBLIC_API_URL}/posts/${post.id}`}><p>{post.createdAt}</p></Link>
+            <Link href={`${NEXT_PUBLIC_API_URL}/posts/${post.id}`}><p>{new Date(post.createdAt).toLocaleDateString('ja-JP')}</p></Link>
         </div>
     )
 }

@@ -29,7 +29,7 @@ const CreateArticle = () => {
     };
 
     return (
-        <div>
+        <div className="new-post-form">
             <form onSubmit={handleSubmit}>
                 <label>タイトル</label>
                 <br />

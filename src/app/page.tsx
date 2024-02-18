@@ -9,19 +9,17 @@ export default async function Home() {
   const posts = await response.json();
 
   return (
-    <main>
-      <div className="contents">
-        <div className="new-post-list">
-          {/* <p>新着記事一覧</p> */}
-          <PostList posts={posts} />
-        </div>
-        <div className="side-bar">
-          <div className="profile">
-            <p>運営者情報</p>
-            <p>運営者情報です。運営者情報です。運営者情報です。運営者情報です。運営者情報です。運営者情報です。運営者情報です。運営者情報です。</p>
-          </div>
+    <div className="contents">
+      <div className="new-post-list">
+        {/* <p>新着記事一覧</p> */}
+        <PostList posts={posts} />
+      </div>
+      <div className="side-bar">
+        <div className="profile">
+          <p>運営者情報</p>
+          <p>運営者情報です。運営者情報です。運営者情報です。運営者情報です。運営者情報です。運営者情報です。運営者情報です。運営者情報です。</p>
         </div>
       </div>
-    </main>
+    </div>
   )
 }
