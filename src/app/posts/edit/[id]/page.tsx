@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from "next/navigation";
 
 
-const page = ({ params }: { params: { id: string } }) => {
+const UpdatePost = ({ params }: { params: { id: string } }) => {
     const router = useRouter();
     const [id, setId] = useState("");
     const [title, setTitle] = useState("");
@@ -62,4 +62,4 @@ const page = ({ params }: { params: { id: string } }) => {
     )
 }
 
-export default page;
+export default UpdatePost;
