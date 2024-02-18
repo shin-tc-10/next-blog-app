@@ -8,7 +8,7 @@ type PostListProps = {
 
 const PostList = ({ posts }: PostListProps) => {
     return (
-        <div>
+        <div className="new-post">
             {posts.map((post) => (
                 <PostDetail key={post.id} post={post} />
             ))}
