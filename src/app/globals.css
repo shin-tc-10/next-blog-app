@@ -117,13 +117,13 @@ footer {
 
 /* 詳細記事コンテンツ */
 .post-detail-content {
-  padding: 10% 2%;
-  margin: 10% 0;
+  padding: 5% 0;
 }
 
 /* 詳細記事更新または削除ボタンエリア */
 .post-update-or-delete-button {
   display: flex;
+  padding-bottom: 5%;
 }
 
 /* 共通 */
