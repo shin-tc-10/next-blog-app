@@ -18,8 +18,10 @@ const page = async ({ params }: { params: { id: string } }) => {
                 <Image src={`https://source.unsplash.com/collection/1346951/1000×300?sig=${postDetail.id}`} alt="" width={1280} height={300} />
             </div>
             <div className="post-detail-content">{postDetail.content}</div>
-            <div><PostUpdate id={postDetail.id} /></div>
-            <div><PostDeleteButton id={postDetail.id} /></div>
+            <div className="post-update-or-delete-button">
+                <div><PostUpdate id={postDetail.id} /></div>
+                <div><PostDeleteButton id={postDetail.id} /></div>
+            </div>
         </div>
     )
 }
