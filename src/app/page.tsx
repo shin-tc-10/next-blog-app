@@ -15,9 +15,16 @@ export default async function Home() {
       </div>
       <div className="side-bar">
         <div className="profile">
-          <p>当ブログについて</p>
+          <p>--当ブログについて--</p>
           <br />
-          <p>当ブログは、Next.jsで作られています。どなたでも自由に投稿可能です。記事のサムネイル画像はランダムに表示されます。</p>
+          <span>・当ブログはNext.jsで作られています。<br />・どなたでも自由に投稿や編集が可能です。<br />・記事の画像はランダムに表示されます。</span>
+        </div>
+        <br />
+        <br />
+        <div className="profile">
+          <p>--当ブログの機能--</p>
+          <br />
+          <span>・新規投稿 / 記事参照 / 記事編集 / 記事削除<br />・ログイン(実装予定) / 会員登録(実装予定)</span>
         </div>
       </div>
     </div>
