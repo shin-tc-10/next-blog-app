@@ -31,6 +31,8 @@ const UpdatePost = ({ params }: { params: { id: string } }) => {
         data.preventDefault();
         setLoading(true);
 
+        const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL;
+
         await fetch(`${NEXT_PUBLIC_API_URL}/api/blog`, {
             method: "PUT",
             headers: {
