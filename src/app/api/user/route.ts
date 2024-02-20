@@ -8,7 +8,7 @@ export async function POST(req: Request, res: NextApiResponse) {
 
     // const hashedPassword = await bcrypt.hash(password, 10);
 
-    const { error } = await supabase.from("User").insert([{ userName: userName, mail: mail, password: password }]);
+    await supabase.from("User").insert([{ userName: userName, mail: mail, password: password }]);
 
     // if (error) {
     //     return NextResponse.json(error);
