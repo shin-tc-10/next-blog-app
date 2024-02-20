@@ -10,10 +10,10 @@ export async function POST(req: Request, res: NextApiResponse) {
 
     const { error } = await supabase.from("User").insert([{ userName: userName, mail: mail, password: password }]);
 
-    if (error) {
-        return NextResponse.json(error);
-    }
+    // if (error) {
+    //     return NextResponse.json(error);
+    // }
 
-    return NextResponse.json({ status: 201 });
+    // return NextResponse.json({ status: 201 });
 
 }
