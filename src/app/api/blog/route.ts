@@ -6,7 +6,7 @@ export async function GET(req: Request, res: NextApiResponse) {
 
     const { data } = await supabase.from("Post").select("*");
 
-    // return NextResponse.json(data);
+    return NextResponse.json(data);
 
 }
 
@@ -26,10 +26,10 @@ export async function PUT(req: Request, res: NextApiResponse) {
         .update({ id: id, title: title, content: content, createdAt: new Date().toISOString() })
         .eq('id', id)
 
-    // if (error) {
-    //     return NextResponse.json(error);
-    // }
+    if (error) {
+        return NextResponse.json(error);
+    }
 
-    // return NextResponse.json({ status: 201 });
+    return NextResponse.json({ status: 201 });
 
 }
