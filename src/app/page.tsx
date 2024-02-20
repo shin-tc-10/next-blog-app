@@ -24,7 +24,7 @@ export default async function Home() {
         <div className="profile">
           <p>--当ブログの機能--</p>
           <br />
-          <span>・新規投稿 / 記事参照 / 記事編集 / 記事削除<br />・ログイン(実装予定) / 会員登録(実装予定)</span>
+          <span>・新規投稿 / 記事参照 / 記事編集 / 記事削除<br />・会員登録(実装予定) / ログイン(実装予定) </span>
         </div>
       </div>
     </div>

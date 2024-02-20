@@ -8,7 +8,10 @@ const Header = () => {
                 <h1><Link href="/">Next Blog App</Link></h1>
             </div>
             <div>
-                <button><Link href="posts/new/" as="/posts/new">新規投稿を追加</Link></button>
+                <Link href="users/signup/" as="/users/signup"><button>新規会員登録</button></Link>
+                <Link href="users/login/" as="/users/login"><button>ログイン</button></Link>
+                <Link href="posts/new/" as="/posts/new"><button>新規投稿を追加</button></Link>
+
             </div>
         </header>
     )

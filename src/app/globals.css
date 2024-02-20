@@ -44,7 +44,7 @@ main {
 /* トップページコンテンツ */
 .contents {
   display: flex;
-  margin: 0 10%;
+  margin: 0 5%;
 }
 
 /* 投稿記事一覧 */
@@ -55,7 +55,6 @@ main {
   width: 500px;
   height: 300px;
   margin: 100px;
-
 }
 
 /* 投稿記事サムネイル画像 */
@@ -68,7 +67,7 @@ main {
 /* サイドバー */
 .side-bar {
   margin: 0 auto;
-  width: 30%;
+  width: 25%;
   padding: 100px;
 }
 
