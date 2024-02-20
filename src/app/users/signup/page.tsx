@@ -16,16 +16,16 @@ const SignUp = () => {
         data.preventDefault();
         setLoading(true);
 
-        // await fetch(`${NEXT_PUBLIC_API_URL}/api/user`, {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //     },
-        //     body: JSON.stringify({ userName, mail, password }),
-        // });
+        await fetch(`${NEXT_PUBLIC_API_URL}/api/user`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ userName, mail, password }),
+        });
 
-        // router.push("/");
-        // router.refresh();
+        router.push("/");
+        router.refresh();
     };
 
     return (

@@ -10,11 +10,11 @@ const UpdatePost = ({ params }: { params: { id: string } }) => {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [loading, setLoading] = useState(false);
-    const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL;
 
     useEffect(() => {
 
         const fetchFunction = async () => {
+            const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL;
             const response = await fetch(`${NEXT_PUBLIC_API_URL}/api/blog/${params.id}`, { next: { revalidate: 10 } });
             const postDetail = await response.json();
 
