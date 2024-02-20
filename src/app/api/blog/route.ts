@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(req: Request, res: NextApiResponse) {
 
-    const { data } = await supabase.from("posts").select("*");
+    const { data } = await supabase.from("Post").select("*");
 
     return NextResponse.json(data);
 
@@ -13,7 +13,7 @@ export async function GET(req: Request, res: NextApiResponse) {
 export async function POST(req: Request, res: NextApiResponse) {
     const { id, title, content } = await req.json();
 
-    await supabase.from("posts").insert([{ id, title, content, createdAt: new Date().toISOString() }]);
+    await supabase.from("Post").insert([{ id, title, content, createdAt: new Date().toISOString() }]);
 
 }
 
@@ -21,10 +21,8 @@ export async function PUT(req: Request, res: NextApiResponse) {
 
     const { id, title, content } = await req.json();
 
-    console.log("idはこれ", id, "titleはこれ", title, "contentはこれ", content);
-
     const { error } = await supabase
-        .from('posts')
+        .from('Post')
         .update({ id: id, title: title, content: content, createdAt: new Date().toISOString() })
         .eq('id', id)
 
