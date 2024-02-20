@@ -5,9 +5,9 @@ import { useRouter } from "next/navigation";
 
 const SignUp = () => {
     const router = useRouter();
-    const [id, setId] = useState("");
-    const [title, setTitle] = useState("");
-    const [content, setContent] = useState("");
+    const [userName, setUserName] = useState("");
+    const [mail, setMail] = useState("");
+    const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
 
     const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -16,12 +16,12 @@ const SignUp = () => {
         data.preventDefault();
         setLoading(true);
 
-        await fetch(`${NEXT_PUBLIC_API_URL}/api/blog`, {
+        await fetch(`${NEXT_PUBLIC_API_URL}/api/user`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ id, title, content }),
+            body: JSON.stringify({ userName, mail, password }),
         });
 
         router.push("/");
@@ -31,17 +31,19 @@ const SignUp = () => {
     return (
         <div className="new-post-form">
             <form onSubmit={handleSubmit}>
-                <label>タイトル</label>
+                <h2>新規会員登録(準備中)</h2>
                 <br />
-                <input type="text" placeholder='タイトル' value={title} onChange={e => setTitle(e.target.value)} />
-                <label>URL</label>
+                <label>ユーザー名</label>
                 <br />
-                <input type="text" placeholder='URL' value={id} onChange={e => setId(e.target.value)} />
-                <label>本文</label>
+                <input type="text" placeholder='ユーザー名' value={userName} onChange={e => setUserName(e.target.value)} />
+                <label>メールアドレス</label>
                 <br />
-                <textarea placeholder='本文' value={content} onChange={e => setContent(e.target.value)} />
+                <input type="text" placeholder='メールアドレス' value={mail} onChange={e => setMail(e.target.value)} />
+                <label>パスワード</label>
                 <br />
-                <button type="submit">投稿</button>
+                <input type="text" placeholder='パスワード' value={password} onChange={e => setPassword(e.target.value)} />
+                <br />
+                <button type="submit">登録</button>
             </form>
         </div >
     )
